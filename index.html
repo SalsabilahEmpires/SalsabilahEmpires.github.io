@@ -1,78 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MD. AL AMIN SOHAG | Writer & Digital Identity Builder</title>
-<meta name="description" content="Official website of MD. AL AMIN SOHAG. Writer, thinker, and digital identity builder exploring literature and technology.">
-<meta name="keywords" content="MD AL AMIN SOHAG, Salsabilah, Writer, Digital Identity, Blog">
-<meta name="author" content="MD. AL AMIN SOHAG">
-<link rel="canonical" href="https://salsabilah.com/">
+  <title>MD. AL AMIN SOHAG | Writer & Digital Identity Builder</title>
+  <meta name="description" content="Official website of MD. AL AMIN SOHAG. Writer, thinker, and digital identity builder exploring literature and technology.">
+  <meta name="keywords" content="MD AL AMIN SOHAG, Salsabilah, Writer, Digital Identity, Blog">
+  <meta name="author" content="MD. AL AMIN SOHAG">
+  <link rel="canonical" href="https://salsabilah.com/">
 
-<style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#0f172a;
-color:white;
-text-align:center;
-}
-.container{
-padding:100px 20px;
-max-width:900px;
-margin:auto;
-}
-h1{
-font-size:42px;
-color:#38bdf8;
-}
-h2{
-font-weight:normal;
-color:#cbd5e1;
-}
-p{
-line-height:1.7;
-max-width:700px;
-margin:20px auto;
-}
-.btn{
-display:inline-block;
-padding:12px 25px;
-margin:15px;
-background:#38bdf8;
-color:black;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold;
-}
-footer{
-padding:30px;
-background:#111827;
-font-size:14px;
-color:#9ca3af;
-}
-</style>
+  <!-- Open Graph / Social Media Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://salsabilah.com/">
+  <meta property="og:title" content="MD. AL AMIN SOHAG | Writer & Digital Identity Builder">
+  <meta property="og:description" content="Writer, thinker, and digital identity builder exploring literature and technology.">
+
+  <!-- Person Schema for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "MD. AL AMIN SOHAG",
+    "url": "https://salsabilah.com/",
+    "jobTitle": "Writer & Digital Identity Builder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Salsabilah Empires"
+    }
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      text-align: center;
+    }
+
+    main.container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      color: #38bdf8;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 400;
+      color: #cbd5e1;
+      margin: 0 0 24px 0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: #94a3b8;
+      max-width: 650px;
+      margin: 0 auto 32px auto;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #38bdf8;
+      border: 1.5px solid #38bdf8;
+    }
+
+    .btn-outline:hover {
+      background: rgba(56, 189, 248, 0.1);
+      color: #7dd3fc;
+    }
+
+    footer {
+      padding: 24px 20px;
+      background: #111827;
+      font-size: 14px;
+      color: #9ca3af;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>MD. AL AMIN SOHAG</h1>
-<h2>Writer · Thinker · Digital Identity Builder</h2>
+  <main class="container">
+    <h1>MD. AL AMIN SOHAG</h1>
+    <h2>Writer · Thinker · Digital Identity Builder</h2>
 
-<p>
-Welcome to my official website. I explore literature, technology,
-and the future of digital identity.
-</p>
+    <p>
+      Welcome to my official website. I explore literature, technology,
+      and the future of digital identity.
+    </p>
 
-<a href="blog.html" class="btn">Read My Blog</a>
-<a href="mailto:seo@salsabilah.com" class="btn">Contact Me</a>
-</div>
+    <div class="btn-group">
+      <a href="blog.html" class="btn">Read My Blog</a>
+      <a href="mailto:seo@salsabilah.com" class="btn btn-outline">Contact Me</a>
+    </div>
+  </main>
 
-<footer>
-© 2026 MD. AL AMIN SOHAG | Salsabilah Empires
-</footer>
+  <footer>
+    © 2026 MD. AL AMIN SOHAG | Salsabilah Empires
+  </footer>
 
 </body>
 </html>
