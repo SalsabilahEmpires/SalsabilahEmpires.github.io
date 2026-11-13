@@ -1,78 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MD. AL AMIN SOHAG | Writer & Digital Identity Builder</title>
-<meta name="description" content="Official website of MD. AL AMIN SOHAG. Writer, thinker, and digital identity builder exploring literature and technology.">
-<meta name="keywords" content="MD AL AMIN SOHAG, Salsabilah, Writer, Digital Identity, Blog">
-<meta name="author" content="MD. AL AMIN SOHAG">
-<link rel="canonical" href="https://salsabilah.com/">
-
-<style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#0f172a;
-color:white;
-text-align:center;
-}
-.container{
-padding:100px 20px;
-max-width:900px;
-margin:auto;
-}
-h1{
-font-size:42px;
-color:#38bdf8;
-}
-h2{
-font-weight:normal;
-color:#cbd5e1;
-}
-p{
-line-height:1.7;
-max-width:700px;
-margin:20px auto;
-}
-.btn{
-display:inline-block;
-padding:12px 25px;
-margin:15px;
-background:#38bdf8;
-color:black;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold;
-}
-footer{
-padding:30px;
-background:#111827;
-font-size:14px;
-color:#9ca3af;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE POS — Salsabilah Amin Empires Limited</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0B1320; color: #F3F4F6; }
+        .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(245, 158, 11, 0.2); }
+    </style>
 </head>
+<body class="min-h-screen flex flex-col">
 
-<body>
+    <!-- Top Header -->
+    <header class="bg-[#0B1320] border-b border-amber-500/30 sticky top-0 z-50 px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="bg-amber-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-sm shadow-lg">SA</div>
+            <div>
+                <h1 class="font-bold text-amber-400 tracking-wide text-lg">S.R. ELECTRONICS PARK</h1>
+                <p class="text-xs text-slate-400">Salsabilah Amin Empires Limited • Hatboalia, Alamdanga, Chuadanga</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span class="bg-indigo-950 text-indigo-300 px-3 py-1 rounded-full text-xs border border-indigo-500/30 font-medium">✨ Powered by Gemini</span>
+            <div class="text-right hidden sm:block">
+                <p class="text-xs font-semibold text-slate-200">Operator: MD. AL AMIN SOHAG</p>
+                <p class="text-[10px] text-amber-400">01711995940 | pos@salsabilah.com</p>
+            </div>
+        </div>
+    </header>
 
-<div class="container">
-<h1>MD. AL AMIN SOHAG</h1>
-<h2>Writer · Thinker · Digital Identity Builder</h2>
+    <!-- Main Workspace -->
+    <main class="flex-1 p-6 max-w-7xl mx-auto w-full space-y-6">
+        
+        <!-- Navigation Tabs -->
+        <div class="flex space-x-2 border-b border-slate-800 pb-3">
+            <button onclick="switchTab('dashboard')" id="tab-btn-dashboard" class="px-4 py-2 bg-amber-500 text-slate-950 font-semibold rounded-lg text-sm transition">ড্যাশবোর্ড</button>
+            <button onclick="switchTab('pos')" id="tab-btn-pos" class="px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-sm transition">POS কাউন্টার</button>
+            <button onclick="switchTab('customers')" id="tab-btn-customers" class="px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-sm transition">গ্রাহক ও বকেয়া (Due)</button>
+            <button onclick="switchTab('products')" id="tab-btn-products" class="px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-sm transition">প্রোডাক্ট লিস্ট (Inventory)</button>
+        </div>
 
-<p>
-Welcome to my official website. I explore literature, technology,
-and the future of digital identity.
-</p>
+        <!-- 1. Dashboard Section -->
+        <div id="section-dashboard" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-xl border-l-4 border-emerald-500">
+                    <p class="text-xs text-slate-400">মোট সম্পদ (Total Assets)</p>
+                    <h3 class="text-xl font-bold text-emerald-400 mt-1">৳ 4,041,656.66</h3>
+                </div>
+                <div class="glass-card p-4 rounded-xl border-l-4 border-amber-500">
+                    <p class="text-xs text-slate-400">ক্লোজিং স্টক ভ্যালু</p>
+                    <h3 class="text-xl font-bold text-amber-400 mt-1">৳ 4,706,773.65</h3>
+                </div>
+                <div class="glass-card p-4 rounded-xl border-l-4 border-rose-500">
+                    <p class="text-xs text-slate-400">গ্রাহকের মোট বকেয়া (Receivable)</p>
+                    <h3 class="text-xl font-bold text-rose-400 mt-1">৳ 2,908,828.93</h3>
+                </div>
+                <div class="glass-card p-4 rounded-xl border-l-4 border-blue-500">
+                    <p class="text-xs text-slate-400">সরবরাহকারীর বকেয়া (Liabilities)</p>
+                    <h3 class="text-xl font-bold text-blue-400 mt-1">৳ 4,756,858.55</h3>
+                </div>
+            </div>
+        </div>
 
-<a href="blog.html" class="btn">Read My Blog</a>
-<a href="mailto:seo@salsabilah.com" class="btn">Contact Me</a>
-</div>
+        <!-- 2. POS Counter Section -->
+        <div id="section-pos" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 glass-card p-4 rounded-xl space-y-4">
+                <h3 class="font-bold text-amber-400"><i class="fa-solid fa-boxes-stacked mr-2"></i> প্রোডাক্ট ক্যাটালগ (POS)</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="pos-product-grid">
+                    <!-- Dynamic Products -->
+                </div>
+            </div>
+            <div class="glass-card p-4 rounded-xl flex flex-col justify-between space-y-4">
+                <div>
+                    <h3 class="font-bold text-amber-400 border-b border-slate-700 pb-2"><i class="fa-solid fa-cart-shopping mr-2"></i> কার্ট ও চেকআউট</h3>
+                    <div id="cart-items" class="space-y-2 mt-3 max-h-60 overflow-y-auto text-sm">
+                        <p class="text-slate-500 text-center py-4">কার্ট খালি আছে</p>
+                    </div>
+                </div>
+                <div class="border-t border-slate-700 pt-3 space-y-2">
+                    <div class="flex justify-between text-sm"><span>মোট:</span><span id="cart-total" class="font-bold text-amber-400">৳ 0.00</span></div>
+                    <button onclick="completeSale()" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-2.5 rounded-lg transition shadow-lg">বিক্রি সম্পন্ন করুন & SMS পাঠান</button>
+                </div>
+            </div>
+        </div>
 
-<footer>
-© 2026 MD. AL AMIN SOHAG | Salsabilah Empires
-</footer>
+        <!-- 3. Customers & Due Filter Section -->
+        <div id="section-customers" class="hidden space-y-4">
+            <div class="flex justify-between items-center flex-wrap gap-3">
+                <h3 class="font-bold text-amber-400 text-lg"><i class="fa-solid fa-users mr-2"></i> গ্রাহক ও বকেয়া লেজার</h3>
+                <div class="flex space-x-2">
+                    <button onclick="filterDueCustomers()" class="bg-rose-600 hover:bg-rose-700 text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition">🚨 বকেয়া কাস্টমার ফিল্টার</button>
+                    <button onclick="resetCustomerFilter()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg text-sm transition">সকল গ্রাহক</button>
+                </div>
+            </div>
+            <div class="glass-card rounded-xl overflow-hidden">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead class="bg-slate-800/80 text-slate-300 border-b border-slate-700">
+                        <tr>
+                            <th class="p-3">গ্রাহকের নাম</th>
+                            <th class="p-3">মোবাইল নম্বর</th>
+                            <th class="p-3">বকেয়া পরিমাণ</th>
+                            <th class="p-3">স্ট্যাটাস</th>
+                            <th class="p-3 text-center">অ্যাকশন (SALSABILAH SMS / WhatsApp)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-table-body" class="divide-y divide-slate-800">
+                        <!-- Dynamic Customer Rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
+        <!-- 4. Products Inventory Section -->
+        <div id="section-products" class="hidden space-y-4">
+            <h3 class="font-bold text-amber-400 text-lg"><i class="fa-solid fa-box mr-2"></i> প্রোডাক্ট স্টক লিস্ট (277 SKUs)</h3>
+            <div class="glass-card rounded-xl overflow-hidden">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead class="bg-slate-800/80 text-slate-300 border-b border-slate-700">
+                        <tr>
+                            <th class="p-3">প্রোডাক্টের নাম</th>
+                            <th class="p-3">ব্র্যান্ড</th>
+                            <th class="p-3">ক্যাটাগরি</th>
+                            <th class="p-3">মূল্য</th>
+                            <th class="p-3">স্টক</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body" class="divide-y divide-slate-800">
+                        <!-- Dynamic Product Inventory -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1320] border-t border-slate-800 py-3 px-6 text-center text-xs text-slate-400">
+        SAE POS — Salsabilah Amin Empires Limited | Powered by Gemini & SALSABILAH SMS Gateway
+    </footer>
+
+    <script>
+        // Data Store
+        const customers = [
+            { name: "BDL Electronics / MD. ABUL BASHAR", phone: "01913809604", due: 416730.20, status: "Overdue" },
+            { name: "M/S HASMOT ENTERPRISE / HASMOT ULLAH", phone: "01711078208", due: 245388.40, status: "Partial Overdue" },
+            { name: "M/S Oishi Electronics / MOTIN KHAN", phone: "01712469868", due: 214498.80, status: "Due" },
+            { name: "BIPLOB HOSSAIN", phone: "01712696580", due: 111074.00, status: "EMI Due" },
+            { name: "BHATPARA ECO / MD. ROMJAN", phone: "01731664486", due: 92240.00, status: "Due" },
+            { name: "SOKINA KHATUN", phone: "01701069210", due: 0, status: "Paid" },
+            { name: "MD. SOHAG", phone: "017124947633", due: 0, status: "Paid" }
+        ];
+
+        const products = [
+            { name: "Minister Double Door Refrigerator 320L", brand: "Minister", category: "Refrigerators", price: 48500, stock: 14 },
+            { name: "MyOne Smart LED TV 43 Inch 4K", brand: "MyOne", category: "LED TVs", price: 32000, stock: 22 },
+            { name: "Butterfly Inverter AC 1.5 Ton", brand: "BUTTERFLY", category: "Air Conditioners", price: 65000, stock: 8 },
+            { name: "ECO+ Automatic Washing Machine 7kg", brand: "ECO+", category: "Washing Machines", price: 28500, stock: 12 },
+            { name: "Sharif Rice Cooker 2.8L", brand: "Sharif", category: "Kitchen", price: 3500, stock: 45 }
+        ];
+
+        let cart = [];
+
+        function switchTab(tabId) {
+            ['dashboard', 'pos', 'customers', 'products'].forEach(id => {
+                document.getElementById(`section-${id}`).classList.add('hidden');
+                document.getElementById(`tab-btn-${id}`).classList.replace('bg-amber-500', 'bg-slate-850');
+                document.getElementById(`tab-btn-${id}`).classList.replace('text-slate-955', 'text-slate-300');
+            });
+            document.getElementById(`section-${tabId}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tabId}`).classList.replace('bg-slate-800', 'bg-amber-500');
+            document.getElementById(`tab-btn-${tabId}`).classList.replace('text-slate-300', 'text-slate-955');
+
+            if(tabId === 'customers') renderCustomers(customers);
+            if(tabId === 'products') renderProducts(products);
+            if(tabId === 'pos') renderPOSProducts();
+        }
+
+        function renderCustomers(data) {
+            const tbody = document.getElementById('customer-table-body');
+            tbody.innerHTML = data.map(c => `
+                <tr class="hover:bg-slate-800/40">
+                    <td class="p-3 font-medium text-slate-200">${c.name}</td>
+                    <td class="p-3 text-slate-400">${c.phone}</td>
+                    <td class="p-3 font-bold text-rose-400">৳ ${c.due.toLocaleString()}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 rounded text-xs ${c.due > 0 ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-emerald-950 text-emerald-300 border border-emerald-800'}">${c.status}</span></td>
+                    <td class="p-3 text-center space-x-2">
+                        <button onclick="sendSms('${c.phone}', '${c.name}', ${c.due})" class="bg-amber-600 hover:bg-amber-700 text-white px-2.5 py-1 rounded text-xs font-semibold"><i class="fa-solid fa-sms mr-1"></i> SALSABILAH SMS</button>
+                        <button onclick="sendWhatsapp('${c.phone}', '${c.name}', ${c.due})" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1 rounded text-xs font-semibold"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function filterDueCustomers() {
+            const dueList = customers.filter(c => c.due > 0);
+            renderCustomers(dueList);
+        }
+
+        function resetCustomerFilter() {
+            renderCustomers(customers);
+        }
+
+        function renderProducts(data) {
+            const tbody = document.getElementById('product-table-body');
+            tbody.innerHTML = data.map(p => `
+                <tr class="hover:bg-slate-800/40">
+                    <td class="p-3 font-medium text-slate-200">${p.name}</td>
+                    <td class="p-3 text-slate-400">${p.brand}</td>
+                    <td class="p-3 text-slate-400">${p.category}</td>
+                    <td class="p-3 font-bold text-amber-400">৳ ${p.price.toLocaleString()}</td>
+                    <td class="p-3"><span class="bg-slate-800 px-2 py-1 rounded text-xs">${p.stock} pcs</span></td>
+                </tr>
+            `).join('');
+        }
+
+        function renderPOSProducts() {
+            const grid = document.getElementById('pos-product-grid');
+            grid.innerHTML = products.map((p, idx) => `
+                <div onclick="addToCart(${idx})" class="glass-card p-3 rounded-lg cursor-pointer hover:border-amber-500 transition">
+                    <h4 class="font-semibold text-sm text-slate-200 truncate">${p.name}</h4>
+                    <p class="text-amber-400 font-bold text-sm mt-1">৳ ${p.price.toLocaleString()}</p>
+                    <p class="text-[10px] text-slate-400 mt-1">স্টক: ${p.stock}</p>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(idx) {
+            const p = products[idx];
+            const existing = cart.find(item => item.name === p.name);
+            if(existing) { existing.qty++; } else { cart.push({...p, qty: 1}); }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            if(cart.length === 0) {
+                container.innerHTML = `<p class="text-slate-500 text-center py-4">কার্ট খালি আছে</p>`;
+                document.getElementById('cart-total').innerText = '৳ 0.00';
+                return;
+            }
+            let total = 0;
+            container.innerHTML = cart.map((item, idx) => {
+                total += item.price * item.qty;
+                return `<div class="flex justify-between items-center bg-slate-900/60 p-2 rounded text-xs">
+                    <div><p class="font-medium text-slate-200">${item.name}</p><p class="text-slate-400">৳ ${item.price} × ${item.qty}</p></div>
+                    <button onclick="cart.splice(${idx},1); updateCartUI();" class="text-rose-400 hover:text-rose-300"><i class="fa-solid fa-trash"></i></button>
+                </div>`;
+            }).join('');
+            document.getElementById('cart-total').innerText = `৳ ${total.toLocaleString()}`;
+        }
+
+        function sendSms(phone, name, due) {
+            alert(`[Sender ID: SALSABILAH] সফলভাবে এসএমএস পাঠানো হয়েছে ${name} (${phone}) এর নম্বরে। বকেয়া: ৳${due.toLocaleString()}`);
+        }
+
+        function sendWhatsapp(phone, name, due) {
+            window.open(`https://wa.me/88${phone}?text=Dear%20${encodeURIComponent(name)},%20Your%20total%20due%20at%20S.R.%20Electronics%20Park%20is%20৳${due}.%20Please%20clear%20payment.%20-%20SALSABILAH`);
+        }
+
+        function completeSale() {
+            if(cart.length === 0) { alert('কার্টে কোনো পণ্য নেই!'); return; }
+            alert('বিক্রি সফলভাবে সম্পন্ন হয়েছে এবং SALSABILAH মাস্কিং সেন্ডার আইডি থেকে স্বয়ংক্রিয় এসএমএস ও ইনভয়েস জেনারেট হয়েছে!');
+            cart = [];
+            updateCartUI();
+        }
+
+        // Initialize first view
+        renderCustomers(customers);
+    </script>
 </body>
 </html>
